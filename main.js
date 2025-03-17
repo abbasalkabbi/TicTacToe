@@ -1,5 +1,5 @@
 const cells=document.querySelectorAll(".cell");
-
+const text=document.querySelector('.footer span');
 
 let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
@@ -34,6 +34,7 @@ function clicedcell(){
 
 function changePlayer(){
     currentPlayer = (currentPlayer == 'X')?'O':'X';
+    text.textContent=`${currentPlayer}'S Turn`
 }
 function updateCell(cell,index){
     options[index]=currentPlayer;
@@ -59,9 +60,12 @@ function checkWinner(){
     }
     if(roundWon){
         update_css()
+        text.textContent=`${currentPlayer}' Win`
         running=false;
     }else if(!options.includes("")){
         console.log("Draw")
+        text.textContent=`Draw`
+        
         running=false
 
     }else{
@@ -72,5 +76,12 @@ function update_css(){
     cells[cellWin[0]].className+=' cell-win'
     cells[cellWin[1]].className+=' cell-win'
     cells[cellWin[2]].className+=' cell-win'
-
+}
+function restart(){
+    options = ["", "", "", "", "", "", "", "", ""];
+    currentPlayer = "X";
+    running = true;
+    cellWin=[];
+    cells.forEach(cell=>cell.textContent='')
+    text.textContent=`${currentPlayer}'S Turn`
 }

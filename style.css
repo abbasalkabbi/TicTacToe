@@ -33,11 +33,17 @@ h1{
     background-color: black;
     color: white;
 }
-.btn{
-    margin: auto;
-    text-align: center;
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.btn button{
+.footer span{
+    font-size: 40px; 
+
+}
+.footer button{
     border: none;
     background-color: blue;
     font-size: 40px;
@@ -46,7 +52,7 @@ h1{
     color: white;
 
 }
-.btn button:hover{
+.footer button:hover{
     color: black;
     box-shadow: 5px 4px 20px 11px rgb(103, 149, 219);
 }
