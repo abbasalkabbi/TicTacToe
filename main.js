@@ -62,10 +62,11 @@ function checkWinner(){
         update_css()
         text.textContent=`${currentPlayer}' Win`
         running=false;
+        setTimeout(restart,3000)
     }else if(!options.includes("")){
         console.log("Draw")
         text.textContent=`Draw`
-        
+        setTimeout(restart(),3000)
         running=false
 
     }else{
@@ -78,10 +79,6 @@ function update_css(){
     cells[cellWin[2]].className+=' cell-win'
 }
 function restart(){
-    options = ["", "", "", "", "", "", "", "", ""];
-    currentPlayer = "X";
-    running = true;
-    cellWin=[];
-    cells.forEach(cell=>cell.textContent='')
-    text.textContent=`${currentPlayer}'S Turn`
+
+    location.reload();
 }
