@@ -5,6 +5,7 @@ let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let running = true;
 let cellWin=[];
+
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -43,7 +44,7 @@ function updateCell(cell,index){
 }
 function checkWinner(){
     let roundWon = false;
-    
+    let win_cells=null;
     for(let i = 0; i < winConditions.length; i++){
         const condition = winConditions[i];
         const cellA = options[condition[0]];
@@ -55,28 +56,48 @@ function checkWinner(){
         if(cellA == cellB && cellB == cellC){
             roundWon = true;
             cellWin=condition;
+            win_cells=i;
             break;
         }
     }
     if(roundWon){
-        update_css()
+        
         text.textContent=`${currentPlayer}' Win`
         running=false;
-        setTimeout(restart,3000)
+        switch(win_cells) {
+            case 0:  update_css('cell_1')
+            break;
+            case 1:  update_css('cell_1')
+            break;
+            case 2:  update_css('cell_1')
+            break;
+            case 3:  update_css('cell_2')
+            break;
+            case 4:  update_css('cell_2')
+            break;
+            case 5:  update_css('cell_2')
+            break;
+            case 6:  update_css('cell_3')
+            break;
+            case 7:  update_css('cell_4')
+            break;
+        
+        }
+        
     }else if(!options.includes("")){
         console.log("Draw")
         text.textContent=`Draw`
-        setTimeout(restart(),3000)
         running=false
 
     }else{
         changePlayer()
     }
 }
-function update_css(){
-    cells[cellWin[0]].className+=' cell-win'
-    cells[cellWin[1]].className+=' cell-win'
-    cells[cellWin[2]].className+=' cell-win'
+function update_css(css){
+    console.log(css)
+    cells[cellWin[0]].className+= ` cell-win ${css}`
+    cells[cellWin[1]].className+=` cell-win ${css}`
+    cells[cellWin[2]].className+=` cell-win ${css}`
 }
 function restart(){
 

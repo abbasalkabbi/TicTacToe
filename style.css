@@ -27,7 +27,41 @@ h1{
     justify-content: center;
     font-size: 100px;
     cursor: pointer;
+    position: relative;
     
+}
+
+.game .cell_1::after {
+    content: '';
+    width: 170px;
+    height: 10px;
+    background-color: rgb(30, 255, 0);
+    transform: rotate(360deg);
+    position: absolute;
+}
+.game .cell_2::after {
+    content: '';
+    width: 170px;
+    height: 10px;
+    background-color: rgb(30, 255, 0);
+    transform: rotate(90deg);
+    position: absolute;
+}
+.game .cell_3::after {
+    content: '';
+    width: 170px;
+    height: 10px;
+    background-color: rgb(30, 255, 0);
+    transform: rotate(53deg);
+    position: absolute;
+}
+.game .cell_4::after {
+    content: '';
+    width: 170px;
+    height: 10px;
+    background-color: rgb(30, 255, 0);
+    transform: rotate(127deg);
+    position: absolute;
 }
 .cell-win{
     background-color: black;
