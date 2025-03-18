@@ -38,6 +38,7 @@ h1{
     background-color: rgb(30, 255, 0);
     transform: rotate(360deg);
     position: absolute;
+    border-radius:25px;
 }
 .game .cell_2::after {
     content: '';
@@ -46,6 +47,7 @@ h1{
     background-color: rgb(30, 255, 0);
     transform: rotate(90deg);
     position: absolute;
+    border-radius:25px;
 }
 .game .cell_3::after {
     content: '';
@@ -54,6 +56,7 @@ h1{
     background-color: rgb(30, 255, 0);
     transform: rotate(53deg);
     position: absolute;
+    border-radius:25px;
 }
 .game .cell_4::after {
     content: '';
@@ -62,6 +65,7 @@ h1{
     background-color: rgb(30, 255, 0);
     transform: rotate(127deg);
     position: absolute;
+    border-radius:25px;
 }
 .cell-win{
     background-color: black;
